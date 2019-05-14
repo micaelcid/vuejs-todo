@@ -2,15 +2,18 @@
   <div id="app">
     <Header />
     <router-view :user="user" id="router-view" />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from './components/Header/index.vue';
+import Footer from './components/Footer/index.vue';
 
 export default {
   components: {
     Header,
+    Footer,
   },
   data() {
     return {
@@ -37,7 +40,9 @@ body {
   color: #2c3e50;
 }
 #router-view {
-  width: 360px;
+  @media (min-width: 1024px){
+    width: 768px;
+  }
   background: white;
   box-shadow: #ccc 0px 1px 4px 1px;
   border-radius: 8px;

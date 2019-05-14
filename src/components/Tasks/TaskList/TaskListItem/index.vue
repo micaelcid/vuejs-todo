@@ -1,7 +1,7 @@
 <template>
   <li :id="`task-list-${task.id}`">
     <div class="task-details">
-      {{task.name}}
+      <span>{{task.name}}</span>
     </div>
     <div class="task-actions">
       <button @click="deleteTask(task.id)">Deletar</button>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <input type="text" maxlength="32" :value="taskName" @keyup="setTaskName" @keyup.enter="addTask">
+    <input type="text" maxlength="32" :value="taskName" @keyup="setTaskName" @keyup.enter="createTask">
   </div>
 </template>
 
 <script>
 export default {
-  props: ['taskName', 'setTaskName', 'addTask'],
+  props: ['taskName', 'setTaskName', 'createTask'],
 };
 </script>
 
