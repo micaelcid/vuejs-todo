@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+
 import Dashboard from './views/Dashboard.vue';
 import Profile from './views/Profile.vue';
+import Example from './views/Example.vue';
 
 Vue.use(Router);
 
@@ -10,13 +12,15 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'dashboard',
       component: Dashboard,
     },
     {
       path: '/profile',
-      name: 'profile',
       component: Profile,
+    },
+    {
+      path: '/example',
+      component: Example,
     },
   ],
 });

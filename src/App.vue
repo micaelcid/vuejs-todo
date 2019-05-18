@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <router-view :user="user" id="router-view" />
+    <router-view :user="user" :message="'Propriedade'" id="router-view" />
     <Footer />
   </div>
 </template>

@@ -1,21 +1,25 @@
 <template>
   <div id="tasks">
-    <h1>Tarefas</h1>
+    <TaskHeader />
     <TaskInput :taskName="taskName" :setTaskName="setTaskName" :createTask="createTask" />
     <TaskList :tasks="tasks" :deleteTask="deleteTask" />
-    <span>{{totalTasks}}</span>
+    <TaskFooter :tasksLength="this.tasksLength" />
   </div>
 </template>
 
 <script>
+import TaskHeader from './TaskHeader/index.vue';
 import TaskInput from './TaskInput/index.vue';
 import TaskList from './TaskList/index.vue';
-import localStorage from './localStorage';
+import TaskFooter from './TaskFooter/index.vue';
+// import localStorage from './localStorage';
 
 export default {
   components: {
+    TaskHeader,
     TaskInput,
     TaskList,
+    TaskFooter,
   },
   data() {
     return {
@@ -25,8 +29,8 @@ export default {
     };
   },
   computed: {
-    totalTasks() {
-      return `Você tem ${this.tasks.length} tarefas.`;
+    tasksLength() {
+      return this.tasks.length;
     },
   },
   methods: {
@@ -41,17 +45,17 @@ export default {
       };
       this.tasks.push(task);
       this.taskName = '';
-      localStorage.createTask(task);
+      // localStorage.createTask(task);
     },
     deleteTask(id) {
       const taskIndex = this.tasks.findIndex(task => task.id === id);
       this.tasks.splice(taskIndex, 1);
-      localStorage.deleteTask(id);
+      // localStorage.deleteTask(id);
     },
   },
   created() {
-    this.tasks = localStorage.getTasks();
-    this.lastTaskId = this.tasks[0].id;
+    // this.tasks = localStorage.getTasks();
+    this.lastTaskId = this.tasks.length > 0 ? this.tasks[0].id : 0;
   },
 };
 </script>
