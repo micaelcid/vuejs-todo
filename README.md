@@ -35,5 +35,15 @@ npm run test:e2e
 npm run test:unit
 ```
 
+### Build container image
+```bash
+docker build -t "vuejs-todo:latest" .
+```
+
+### Run container
+```bash
+docker run -p 8080:8080 -ti vuejs-todo:latest
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
