@@ -2,7 +2,8 @@
   <div id="nav">
     <h2>Vue Todo</h2>
     <router-link to="/">Painel</router-link> |
-    <router-link to="/profile">Perfil</router-link>
+    <router-link to="/profile">Perfil</router-link> |
+    <router-link to="/example">Exemplos</router-link>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <TaskHeader />
     <TaskInput :taskName="taskName" :setTaskName="setTaskName" :createTask="createTask" />
     <TaskList :tasks="tasks" :deleteTask="deleteTask" />
-    <TaskFooter :tasksLength="this.tasksLength" />
+    <TaskFooter :tasksLength="tasksLength" />
   </div>
 </template>
 

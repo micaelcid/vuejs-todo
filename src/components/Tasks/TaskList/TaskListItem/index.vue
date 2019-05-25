@@ -1,6 +1,6 @@
 <template>
   <li :id="`task-list-${task.id}`">
-    <Description :task="task" />
+    <Description :taskName="task.name" />
     <Actions :taskId="task.id" :deleteTask="deleteTask" />
   </li>
 </template>
